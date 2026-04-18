@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launching Soon – Get Early Access</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 48px 32px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 16px; color: #1a1a2e; }
+        p { color: #4a5568; line-height: 1.6; margin-bottom: 32px; }
+        input {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .success { 
+            background: #c6f6d5; 
+            color: #22543d; 
+            padding: 12px; 
+            border-radius: 12px; 
+            margin-top: 16px;
+            display: none;
+        }
+        footer { margin-top: 32px; font-size: 0.8rem; color: #a0aec0; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 Something Big Is Coming</h1>
+        <p>We're building a tool that will save you 10+ hours per week. Be the first to know.</p>
+        <form id="waitlistForm">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Get Early Access →</button>
+        </form>
+        <div id="successMessage" class="success">✅ You're on the list! We'll email you when we launch.</div>
+        <footer>No spam. Unsubscribe anytime. 100% free early access.</footer>
+    </div>
+    <script>
+        const form = document.getElementById('waitlistForm');
+        const emailInput = document.getElementById('email');
+        const successDiv = document.getElementById('successMessage');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = emailInput.value;
+            // Replace with your actual FormSubmit.co endpoint later
+            successDiv.style.display = 'block';
+            emailInput.value = '';
+            setTimeout(() => { successDiv.style.display = 'none'; }, 5000);
+            console.log('Email collected (demo):', email);
+        });
+    </script>
+</body>
+</html>
