@@ -60,10 +60,25 @@
     <div class="card">
         <h1>🚀 Something Big Is Coming</h1>
         <p>We're building a tool that will save you 10+ hours per week. Be the first to know.</p>
-        <form id="waitlistForm">
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Get Early Access →</button>
-        </form>
+        <form action="https://formsubmit.co/YOUR_REAL_EMAIL@gmail.com" method="POST">
+    <!-- Honeypot spam protection (hidden from users) -->
+    <input type="text" name="_honey" style="display:none">
+    
+    <!-- Disable CAPTCHA (optional - remove this line if you want reCAPTCHA) -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <!-- Custom subject line so you know it's from your waitlist -->
+    <input type="hidden" name="_subject" value="🔥 NEW WAITLIST SIGNUP! 🔥">
+    
+    <!-- Where to redirect after submission (create a thanks.html later) -->
+    <input type="hidden" name="_next" value="https://StoreLunchFlow.github.io/WaitlistWealth/thanks.html">
+    
+    <!-- Auto-respond to users (optional - uncomment to use) -->
+    <!-- <input type="hidden" name="_autoresponse" value="Thanks for joining! We'll email you when we launch."> -->
+    
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Get Early Access →</button>
+</form>
         <div id="successMessage" class="success">✅ You're on the list! We'll email you when we launch.</div>
         <footer>No spam. Unsubscribe anytime. 100% free early access.</footer>
     </div>
@@ -84,3 +99,4 @@
     </script>
 </body>
 </html>
+
